@@ -56,4 +56,4 @@ ggplot(data = mpg) +
 
 ggplot(data = mpg) + 
   geom_smooth(mapping = aes(x = displ, y = hwy))
-
+#https://r4ds.had.co.nz/data-visualisation.html#geometric-objects
