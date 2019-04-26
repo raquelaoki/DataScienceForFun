@@ -1,0 +1,9 @@
+Data/
+Files/
+DatadataIn/
+
+.ipynb_checkpoints/
+.Rhistory
+.RData
+.RDataTmp
+.png
