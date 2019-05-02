@@ -143,6 +143,33 @@ ggplot(data = diamonds) +
 
 
 #Chapter 5.6 
+
 #stop use order() and use arange(), the correct function to order rows
+#Exercise 
+ex1a = flights %>% 
+  group_by(flight) %>%
+  summarize(
+    n_early = mean(arr_delay>15),
+    n_delay = mean(dep_delay<15),
+  ) %>% 
+  filter(n_early>.5,n_delay>0.5)
+
+ex1b = flights %>%
+  group_by(flight)%>%
+  summarise(
+    min = min(dep_delay),
+    mean = mean(dep_delay)
+  )%>%
+  filter(min>10)%>%
+  select(flight,mean)
+
+ex1d = flights %>% 
+  group_by(flight) %>%
+  summarize(
+    n_early = mean(arr_delay<=15),
+    n2_late = mean(arr_delay>100)
+  ) %>%
+  filter(n_early>=0.95 & n2_late > 0.01 ) 
+
 #https://r4ds.had.co.nz/transform.html#grouped-summaries-with-summarise
 #I'm on chapter 5.6
